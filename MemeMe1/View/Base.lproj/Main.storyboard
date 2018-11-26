@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gT0-gH-RYO">
+                                <rect key="frame" x="0.0" y="625" width="375" height="42"/>
+                                <items>
+                                    <barButtonItem title="Album" id="QU5-4b-rGa">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="0tH-AL-FlT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="252" style="plain" systemItem="fixedSpace" id="lcW-HO-6Yd"/>
+                                    <barButtonItem systemItem="camera" id="mXh-yA-40c">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="ySH-f9-QLT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yB8-lA-amH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="2Cc-Ko-wpn">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Z39-ta-PF4">
+                                            <connections>
+                                                <action selector="shareWithSender:" destination="BYZ-38-t0r" id="DJH-Lj-p8U"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="OWf-x4-itL"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8gJ-4e-PV5">
+                                <rect key="frame" x="0.0" y="139" width="375" height="348"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKQ-ra-hcQ" userLabel="topFieldText">
+                                <rect key="frame" x="54" y="167" width="273" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EUV-hh-rru"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F8l-Mg-CJF" userLabel="bottomFieldText">
+                                <rect key="frame" x="54" y="407" width="273" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hf6-Cz-mTD"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eKQ-ra-hcQ" firstAttribute="top" secondItem="yB8-lA-amH" secondAttribute="bottom" constant="103" id="9ay-Vb-UL1"/>
+                            <constraint firstItem="8gJ-4e-PV5" firstAttribute="top" secondItem="yB8-lA-amH" secondAttribute="bottom" constant="75" id="E6f-QI-wmH"/>
+                            <constraint firstItem="F8l-Mg-CJF" firstAttribute="top" secondItem="eKQ-ra-hcQ" secondAttribute="bottom" constant="190" id="Gnu-PE-k3Y"/>
+                            <constraint firstItem="gT0-gH-RYO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="IBz-6V-Xsf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eKQ-ra-hcQ" secondAttribute="trailing" constant="48" id="Ohj-ki-eXt"/>
+                            <constraint firstItem="gT0-gH-RYO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PR9-3L-ciP"/>
+                            <constraint firstItem="yB8-lA-amH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rg0-7U-spB"/>
+                            <constraint firstItem="gT0-gH-RYO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S9n-qI-Wbo"/>
+                            <constraint firstItem="yB8-lA-amH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xfg-dU-DHV"/>
+                            <constraint firstItem="yB8-lA-amH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aDq-2u-4wz"/>
+                            <constraint firstItem="gT0-gH-RYO" firstAttribute="top" secondItem="F8l-Mg-CJF" secondAttribute="bottom" constant="168" id="d2u-gR-i81"/>
+                            <constraint firstItem="8gJ-4e-PV5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eXT-he-Dwa"/>
+                            <constraint firstItem="gT0-gH-RYO" firstAttribute="top" secondItem="8gJ-4e-PV5" secondAttribute="bottom" constant="138" id="guY-IK-BQZ"/>
+                            <constraint firstItem="8gJ-4e-PV5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hdb-WH-Om4"/>
+                            <constraint firstItem="F8l-Mg-CJF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="kGN-WQ-GKn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F8l-Mg-CJF" secondAttribute="trailing" constant="48" id="yZg-L6-xt5"/>
+                            <constraint firstItem="eKQ-ra-hcQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="zq2-xf-qL0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="F8l-Mg-CJF" id="Zmv-RL-cTb"/>
+                        <outlet property="cameraButton" destination="mXh-yA-40c" id="qst-fX-Myj"/>
+                        <outlet property="imagePickerView" destination="8gJ-4e-PV5" id="kK2-dg-PP5"/>
+                        <outlet property="imageView" destination="8gJ-4e-PV5" id="9ec-9R-Eht"/>
+                        <outlet property="navigationBar" destination="yB8-lA-amH" id="JF5-SR-dO8"/>
+                        <outlet property="shareBtn" destination="Z39-ta-PF4" id="TWY-de-6EQ"/>
+                        <outlet property="toolbar" destination="gT0-gH-RYO" id="hS6-di-U0A"/>
+                        <outlet property="topTextField" destination="eKQ-ra-hcQ" id="jsq-85-20l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
