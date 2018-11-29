@@ -22,7 +22,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let imageController = UIImagePickerController()
     
-    //Issue: color white not showing
     let memeTextAttributes:[NSAttributedString.Key: Any] = [
         NSAttributedString.Key(rawValue: NSAttributedString.Key.strokeColor.rawValue): UIColor.black,
         NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white,
@@ -35,6 +34,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         
         imageController.delegate = self
+        topTextField.delegate = self
+        bottomTextField.delegate = self
         
         //Issue: text is not aligned
         topTextField.textAlignment = NSTextAlignment.center
@@ -78,11 +79,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //Issue: not sure this works!
         controller.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
             
-            var meme : Meme!{
-                didSet{
-                    self.save()
-                }
-            }
+            self.save()
+//
+//            var meme : Meme!{
+//                didSet{
+//
+//                }
+//            }
         }
         
         //preset the activity controller 
@@ -205,19 +208,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    //Issue: when do I call this?
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if textField.text == "TOP TEXT" || textField.text == "BOTTOM TEXT"
-        {textField.text = ""}
-    }
-    
-    //Issue: when do I call this?
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        return true;
-    }
+
     
     
 }
